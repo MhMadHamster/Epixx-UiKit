@@ -1,0 +1,48 @@
+.typograph(@padding-vertical: 0; @margin-vertical: 0; @font-size: @text-size;
+					 @color: @dark-grey; @weight: normal; @lh: auto) {
+	font-size: @font-size;
+	color: @color;
+	padding: @padding-vertical 0;
+	margin: @margin-vertical 0;
+	font-weight: @weight;
+	line-height: @lh;
+}
+
+h1, .h1 {
+	.typograph(5px);
+
+	&-lined {
+		.typograph(@margin-vertical: 25px;);
+		border-bottom: 1px solid fade(@dark-grey, 20%);
+	}
+}
+
+h2, .h2 {
+	.typograph(5px; @font-size: (@text-size - 4));
+}
+
+h3, .h3 {
+	.typograph(5px; @font-size: (@text-size - 10));
+}
+
+h4, .h4 {
+	.typograph(5px; @font-size: (@text-size / 2); @weight: bold);
+}
+
+.text {
+	.typograph(15px; @font-size: (@text-size / 2 - 1));
+}
+
+.link {
+	.typograph(@font-size: (@text-size / 2 - 1));
+	display: inline-block;
+	padding: 10px 15px;
+
+	&-org { color: @light-orange; }
+
+	&:hover { text-decoration: none; }
+
+	&:first-of-type {
+		padding-left: 0;
+	}
+}

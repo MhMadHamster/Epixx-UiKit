@@ -1,0 +1,161 @@
+.form-check {
+  background-color: @white;
+  border-radius: 5px;
+  padding: 10px 0;
+  position: relative;
+
+  & .form-radio {
+    width: 100%;
+    position: relative;
+    .typograph(@color: @checkbox-text-color; @font-size: @checkbox-font-size;);
+
+    & label {
+      display: block;
+      padding: 5px 0;
+      padding-left: 30px;
+      position: relative;
+      cursor: pointer;
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 5px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid @checkbox-stroke-color;
+      }
+
+    }
+
+    & .radio {
+      display: none;
+
+      &:checked + label:after {
+        font-family: "input-text-icons";
+        content: '\e802';
+        font-size: 26px;
+        border: none;
+        color: @light-orange;
+        top: 2px;
+      }
+    
+      &[disabled="true"] + label {
+        color: @input-grey-stroke;
+
+        &:after {
+          border: 1px solid @input-grey-stroke;
+        }
+      }
+    }
+  }
+
+  & .form-checkbox {
+    width: 100%;
+    position: relative;
+    .typograph(@color: @checkbox-text-color; @font-size: @checkbox-font-size;);
+
+    & label {
+      display: block;
+      padding: 5px 0;
+      padding-left: 30px;
+      position: relative;
+      cursor: pointer;
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 5px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        border: 1px solid @checkbox-stroke-color;
+      }
+
+    }
+
+    & .checkbox {
+      display: none;
+
+      &:checked + label:after {
+        font-family: "input-text-icons";
+        content: '\e800';
+        font-size: 14px;
+        border: 2px solid @light-orange;
+        color: @light-orange;
+        text-align: center;
+        top: 5px;
+      }
+    
+      &[disabled="true"] + label {
+        color: @input-grey-stroke;
+
+        &:after {
+          border: 1px solid @input-grey-stroke;
+        }
+      }
+    }
+  }
+
+  & .form-switch {
+    width: 100%;
+    position: relative;
+    .typograph(@color: @checkbox-text-color; @font-size: @checkbox-font-size;);
+
+    & label {
+      display: block;
+      padding: 5px 0;
+      padding-left: 50px;
+      position: relative;
+      cursor: pointer;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 8px;
+        left: 10px;
+        transition: all .3s;
+      }
+
+      &:after {
+        width: 32px;
+        height: 16px;
+        border-radius: 10px;
+        background-color: @input-grey-stroke;
+      }
+
+      &:before {
+        width: 14px;
+        height: 14px;
+        background-color: #fff;
+        z-index: 2;
+        border-radius: 50%;
+        top: 9px;
+        left: 11px;
+      }
+    }
+
+    & .switch {
+      display: none;
+
+      &:checked + label {
+        &:after { background-color: @btn-hover-green; }
+        &:before { left: 27px; }
+      }
+    
+      &[disabled="true"] + label {
+        color: @input-grey-stroke;
+
+        &:after {
+          background-color: @checkbox-switch-disabled;
+        }
+      }
+    }
+  }
+}

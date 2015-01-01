@@ -1,0 +1,65 @@
+.generate-columns(@n, @i: 1) when (@i =< @n) { // Условие выполнения!
+// @n — количество колонок
+// @i — внутренний счетчик от 1 до @n
+// Собственно, генерация
+	.col-@{i} {
+		width: ((@i * 100%) / @n);
+		float: left;
+		padding: 0 @column-horizontal-padding;
+	}
+
+// Рекурсовный самовызов с цвеличенным на 1 счетчиком
+	.generate-columns(@n, (@i + 1));
+}
+
+// Вызываем примесь
+.generate-columns(12);
+
+// [class*=col-]:first-of-type { margin-left: @column-horizontal-padding * (-1); }
+// [class*=col-]:last-of-type { margin-right: @column-horizontal-padding * (-1); }
+
+.container {
+	max-width: 1200px;
+	min-width: 1200px;
+	margin: 0 auto;
+	padding-left: @column-horizontal-padding; // центрирование с 18px паддингами между колонками
+	padding-right: @column-horizontal-padding;
+}
+
+.row {
+	overflow: hidden;
+	margin: 10px;
+}
+
+[class*=col-] .row [class*=col-]:first-child:last-child {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+[class*=col-] .row (([class*=col-]:not:first-child):not):last-child {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+[class*=col-] .btn:first-of-type {
+	margin-left: 0;
+}
+
+[class*=col-] .btn:last-of-type {
+	margin-right: 0;
+}
+
+.pull-left { float: left; }
+.pull-right {float: right; }
+
+.clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}

@@ -1,0 +1,46 @@
+.form-input-text {
+  background-color: @white;
+  border-radius: 5px;
+  padding: 10px 30px;
+  position: relative;
+
+  & .icon {
+    position: relative;
+    margin: 20px 0;
+  }
+
+  & .icon-wrong:before, .icon-correct:before {
+    position: absolute;
+    font-size: 20px;
+    top: 8px;
+    right: 7px;
+  }
+
+  & .icon-wrong:before {
+    color: @input-wrong;
+  }
+
+  & .icon-correct:before {
+    color: @input-correct;
+  }
+
+  & .input-text {
+    display: block;
+    width: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid @input-grey-stroke;
+    .typograph(@color: @input-text-color; @font-size: @input-font-size;);
+    padding: 7px;
+    margin: 20px 0;
+    height: 35px;
+  }
+
+  & .input-text-wrong {
+    border: 2px solid @input-wrong;
+  }
+
+  & .input-text-correct {
+    border: 2px solid @input-correct;
+  }
+}
