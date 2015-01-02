@@ -684,6 +684,26 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
   }
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.center {
+  text-align: center;
+}
+
 *,
 *:after,
 *:before {
@@ -777,7 +797,15 @@ body {
 
 .row {
   overflow: hidden;
-  margin: 10px;
+  margin: 20px 0;
+}
+
+[class*=col-] .row:first-of-type {
+  margin-top: 0;
+}
+
+[class*=col-] .row:last-of-type {
+  margin-bottom: 0;
 }
 
 [class*=col-] .row [class*=col-]:first-child:last-child {
@@ -788,22 +816,6 @@ body {
 [class*=col-] .row (([class*=col-]:not:first-child):not):last-child {
   margin-left: 0;
   margin-right: 0;
-}
-
-[class*=col-] .btn:first-of-type {
-  margin-left: 0;
-}
-
-[class*=col-] .btn:last-of-type {
-  margin-right: 0;
-}
-
-.pull-left {
-  float: left;
-}
-
-.pull-right {
-  float: right;
 }
 
 .rect {
@@ -1359,23 +1371,32 @@ h4,
   content: '\e805';
 }
 
-.select2-drop {
+.select2-drop.select2-drop-active {
+  margin-top: -2px;
+}
+
+.select2-drop,
+.select2-drop.select2-drop-above.select2-drop-active {
   border: 1px solid #eaeaea;
   box-shadow: none;
   font-size: 15px;
   color: #606060;
+  margin-top: 2px;
 }
 
-.select2-drop .select2-results {
+.select2-drop .select2-results,
+.select2-drop.select2-drop-above.select2-drop-active .select2-results {
   margin: 0;
   padding: 0;
 }
 
-.select2-drop .select2-results .select2-highlighted {
+.select2-drop .select2-results .select2-highlighted,
+.select2-drop.select2-drop-above.select2-drop-active .select2-results .select2-highlighted {
   background-color: #fc6e51;
 }
 
-.select2-drop .select2-results li:hover {
+.select2-drop .select2-results li:hover,
+.select2-drop.select2-drop-above.select2-drop-active .select2-results li:hover {
   background-color: #fc6e51;
 }
 
@@ -1714,4 +1735,116 @@ h4,
 .owl-theme .owl-controls .owl-buttons .owl-next {
   right: 197px;
   top: -43.5px;
+}
+
+.well {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 30px;
+  position: relative;
+}
+
+.popup-1 {
+  font-size: 15px;
+  color: #fc6e51;
+  padding: 0 0;
+  margin: 0 0;
+  font-weight: normal;
+  line-height: auto;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.popup {
+  font-size: 13px;
+  color: #ffffff;
+  padding: 0 0;
+  margin: 0 0;
+  font-weight: normal;
+  line-height: auto;
+  background-color: #fc6e51;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+}
+
+.popup:after {
+  content: '\e805';
+  font-family: 'input-text-icons';
+  color: #fc6e51;
+  font-size: 25px;
+  display: block;
+  position: absolute;
+  top: -18px;
+  left: 45%;
+}
+
+.tabs {
+  font-size: 15px;
+  position: relative;
+  overflow: auto;
+  height: 350px;
+}
+
+.tabs .tabs__radio {
+  display: none;
+}
+
+.tabs .tabs__radio:not(:checked) + .tabs__radio-text:hover {
+  cursor: pointer;
+}
+
+.tabs .tabs__radio:checked + .tabs__radio-text {
+  background-color: #fc6e51;
+  color: #ffffff;
+  border-color: #fc6e51;
+}
+
+.tabs .tabs__radio:checked ~ .tabs-content > .tabs-content__text {
+  visibility: hidden;
+  position: absolute;
+}
+
+.tabs .tabs__radio:nth-of-type(1):checked ~ .tabs-content > .tabs-content__text:nth-of-type(1) {
+  visibility: visible;
+  position: relative;
+}
+
+.tabs .tabs__radio:nth-of-type(2):checked ~ .tabs-content > .tabs-content__text:nth-of-type(2) {
+  visibility: visible;
+  position: relative;
+}
+
+.tabs .tabs__radio:nth-of-type(3):checked ~ .tabs-content > .tabs-content__text:nth-of-type(3) {
+  visibility: visible;
+  position: relative;
+}
+
+.tabs .tabs__radio:nth-of-type(4):checked ~ .tabs-content > .tabs-content__text:nth-of-type(4) {
+  visibility: visible;
+  position: relative;
+}
+
+.tabs > .tabs__radio-text {
+  padding: 10px 30px;
+  display: inline-block;
+  border: 1px solid #dadada;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #ffffff;
+  position: relative;
+  color: #3f3f3f;
+}
+
+.tabs .tabs-content > .tabs-content__text {
+  position: absolute;
+  display: block;
+  top: -1px;
+  background-color: #ffffff;
+  border-top-left-radius: 0px;
+  padding-top: 15px;
+  border-top: 1px solid #dadada;
+  color: #3f3f3f;
 }

@@ -1,0 +1,30 @@
+.well {
+  .well();
+}
+
+.popup-1 {
+  .typograph(@font-size: 15px; @color: @light-orange;);
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.popup {
+  .typograph(@font-size: @popup-font-size; @color: @popup-font-color;);
+  background-color: @popup-color;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    content: '\e805';
+    font-family:'input-text-icons';
+    color: @popup-color;
+    font-size: 25px;
+    display: block;
+    position: absolute;
+    top: -18px;
+    left: 45%;
+  }
+}

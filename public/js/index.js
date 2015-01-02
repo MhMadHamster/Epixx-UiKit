@@ -54,7 +54,7 @@ $(document).ready(function() {
 
   $("#select2").select2();
   $("#select1").select2({
-    placeholder: "Select a State",
+    placeholder: "Выпадающий список",
     minimumResultsForSearch: -1
   });
 
@@ -118,6 +118,10 @@ $(document).ready(function() {
     } else {
       $(this).next().text("Выключено");
     }
+  });
+
+  $(".popup-1").on("click", function(){
+    $(this).next().toggleClass("hidden");
   });
 
 });

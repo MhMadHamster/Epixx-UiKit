@@ -28,8 +28,11 @@
 
 .row {
 	overflow: hidden;
-	margin: 10px;
+	margin: 20px 0;
 }
+
+[class*=col-] .row:first-of-type { margin-top: 0; }
+[class*=col-] .row:last-of-type { margin-bottom: 0; }
 
 [class*=col-] .row [class*=col-]:first-child:last-child {
 	padding-left: 0;
@@ -39,27 +42,4 @@
 [class*=col-] .row (([class*=col-]:not:first-child):not):last-child {
 	margin-left: 0;
 	margin-right: 0;
-}
-
-
-[class*=col-] .btn:first-of-type {
-	margin-left: 0;
-}
-
-[class*=col-] .btn:last-of-type {
-	margin-right: 0;
-}
-
-.pull-left { float: left; }
-.pull-right {float: right; }
-
-.clearfix() {
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
 }

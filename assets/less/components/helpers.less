@@ -1,0 +1,18 @@
+.hidden { visibility: hidden; }
+
+.pull-left { float: left; }
+.pull-right {float: right; }
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.italic { font-style: italic; }
+.center { text-align: center; }
