@@ -1848,3 +1848,81 @@ h4,
   border-top: 1px solid #dadada;
   color: #3f3f3f;
 }
+
+.turn-based {
+  padding-top: 50px;
+  position: relative;
+}
+
+.turn-based .tb-radio {
+  display: none;
+}
+
+.turn-based .tb-radio:checked + .tb-radio-text:after {
+  background-color: #fc6e51;
+}
+
+.turn-based .tb-radio:checked + .tb-radio-text ~ .tb-radio-text:after {
+  background-color: #dfdfdf;
+}
+
+.turn-based .tb-radio:checked + .tb-radio-text ~ .tb-line {
+  background-color: #dfdfdf;
+}
+
+.turn-based .tb-radio:checked + .tb-radio-text ~ .tb-line:after,
+.turn-based .tb-radio:checked + .tb-radio-text ~ .tb-line:before {
+  background-color: #dfdfdf;
+}
+
+.turn-based .tb-radio-text {
+  display: inline-block;
+  position: relative;
+  color: #797979;
+}
+
+.turn-based .tb-radio-text:hover {
+  cursor: pointer;
+}
+
+.turn-based .tb-radio-text:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #fc6e51;
+  border-radius: 50%;
+  top: -20px;
+  left: 35%;
+}
+
+.turn-based .tb-line {
+  display: inline-block;
+  width: 35%;
+  height: 2px;
+  background-color: #fc6e51;
+  vertical-align: top;
+  position: relative;
+  top: -15px;
+}
+
+.turn-based .tb-line:after,
+.turn-based .tb-line:before {
+  content: '';
+  background-color: #fc6e51;
+  height: 2px;
+  width: 30%;
+  display: block;
+  position: absolute;
+}
+
+.turn-based .tb-line:after {
+  top: 0;
+  left: -15px;
+}
+
+.turn-based .tb-line:before {
+  top: 0;
+  right: -15px;
+}
