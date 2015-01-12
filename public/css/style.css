@@ -1926,3 +1926,465 @@ h4,
   top: 0;
   right: -15px;
 }
+
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  box-sizing: border-box;
+}
+
+.noUi-target {
+  position: relative;
+  direction: ltr;
+}
+
+.noUi-base {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.noUi-handle {
+  position: relative;
+  z-index: 1;
+}
+
+.noUi-stacking .noUi-handle {
+  /* This class is applied to the lower origin when
+   its values is > 50%. */
+  z-index: 10;
+}
+
+.noUi-stacking + .noUi-origin {
+  /* Fix stacking order in IE7, which incorrectly
+   creates a new context for the origins. */
+  *z-index: -1;
+}
+
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: left 0.3s, top 0.3s;
+  transition: left 0.3s, top 0.3s;
+}
+
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* Painting and performance;
+ * Browsers can paint handles in their own layer.
+ */
+
+.noUi-base {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Slider size and handle placement;
+ */
+
+.noUi-horizontal {
+  height: 18px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 34px;
+  height: 28px;
+  left: -17px;
+  top: -6px;
+}
+
+.noUi-vertical {
+  width: 18px;
+}
+
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 34px;
+  left: -6px;
+  top: -17px;
+}
+
+/* Styling;
+ */
+
+.noUi-background {
+  background: #FAFAFA;
+  box-shadow: inset 0 1px 1px #f0f0f0;
+}
+
+.noUi-connect {
+  background: #3FB8AF;
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45);
+  -webkit-transition: background 450ms;
+  transition: background 450ms;
+}
+
+.noUi-origin {
+  border-radius: 2px;
+}
+
+.noUi-target {
+  border-radius: 4px;
+  border: 1px solid #D3D3D3;
+  box-shadow: inset 0 1px 1px #f0f0f0, 0 3px 6px -5px #bbbbbb;
+}
+
+.noUi-target.noUi-connect {
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #bbbbbb;
+}
+
+/* Handles and cursors;
+ */
+
+.noUi-dragable {
+  cursor: w-resize;
+}
+
+.noUi-vertical .noUi-dragable {
+  cursor: n-resize;
+}
+
+.noUi-handle {
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  background: #FFF;
+  cursor: default;
+  box-shadow: inset 0 0 1px #ffffff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbbbbb;
+}
+
+.noUi-active {
+  box-shadow: inset 0 0 1px #ffffff, inset 0 1px 7px #dddddd, 0 3px 6px -3px #bbbbbb;
+}
+
+/* Handle stripes;
+ */
+
+.noUi-handle:before,
+.noUi-handle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  background: #E8E7E6;
+  left: 14px;
+  top: 6px;
+}
+
+.noUi-handle:after {
+  left: 17px;
+}
+
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+  width: 14px;
+  height: 1px;
+  left: 6px;
+  top: 14px;
+}
+
+.noUi-vertical .noUi-handle:after {
+  top: 17px;
+}
+
+/* Disabled state;
+ */
+
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+  background: #B8B8B8;
+}
+
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+
+.rangeslider-percent .noUi-base {
+  background-color: #fc6e51;
+}
+
+.rangeslider-percent .noUi-base .noUi-handle {
+  display: none;
+}
+
+.rangeslider,
+.rangeslider-percent {
+  margin-top: 20px;
+  margin-right: 15px;
+}
+
+.rangeslider.noUi-target,
+.rangeslider-percent.noUi-target,
+.rangeslider .noUi-background,
+.rangeslider-percent .noUi-background {
+  box-shadow: none;
+  background-color: #e6e9ed;
+  border-color: transparent;
+}
+
+.rangeslider .noUi-origin,
+.rangeslider-percent .noUi-origin {
+  border-radius: 2px;
+}
+
+.rangeslider .noUi-origin.noUi-connect,
+.rangeslider-percent .noUi-origin.noUi-connect {
+  background-color: #fc6e51;
+  box-shadow: none;
+}
+
+.rangeslider.noUi-horizontal,
+.rangeslider-percent.noUi-horizontal {
+  height: 8px;
+}
+
+.rangeslider.noUi-horizontal .noUi-handle,
+.rangeslider-percent.noUi-horizontal .noUi-handle {
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: #fc6e51;
+  position: relative;
+  box-shadow: none;
+  left: -7px;
+}
+
+.rangeslider.noUi-horizontal .noUi-handle:before,
+.rangeslider-percent.noUi-horizontal .noUi-handle:before,
+.rangeslider.noUi-horizontal .noUi-handle:after,
+.rangeslider-percent.noUi-horizontal .noUi-handle:after {
+  display: none;
+}
+
+.rangeslider.noUi-horizontal .noUi-handle .rangeslider-tooltip,
+.rangeslider-percent.noUi-horizontal .noUi-handle .rangeslider-tooltip,
+.rangeslider.noUi-horizontal .noUi-handle .rangeslider-percent,
+.rangeslider-percent.noUi-horizontal .noUi-handle .rangeslider-percent {
+  font-size: 15px;
+  color: #525252;
+  position: absolute;
+  bottom: 20px;
+  min-width: 40px;
+  left: 50%;
+  margin-left: -20px;
+  text-align: center;
+}
+
+.fork-wrapper {
+  font-size: 0;
+}
+
+.fork-wrapper input[type='radio'] {
+  display: none;
+}
+
+.fork-wrapper input[type='radio']:checked + .radio-fork {
+  background-color: #fc6e51;
+  color: #ffffff;
+}
+
+.fork-wrapper .radio-fork {
+  cursor: pointer;
+  display: inline-block;
+  width: 50%;
+  padding: 10px 0;
+  border: 2px solid #fc6e51;
+  background-color: #ffffff;
+  color: #fc6e51;
+  font-size: 14px;
+}
+
+.fork-wrapper .radio-fork:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.fork-wrapper .radio-fork:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.tape {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tape.tape-red:after,
+.tape.tape-green:after,
+.tape.tape-yellow:after {
+  content: '';
+  display: block;
+  height: 12px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -40%;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.tape.tape-red:after {
+  background-color: #e55c5c;
+}
+
+.tape.tape-green:after {
+  background-color: #83d865;
+}
+
+.tape.tape-yellow:after {
+  background-color: #fee61e;
+}
+
+.menu {
+  padding: 15px 0;
+  min-height: 370px;
+}
+
+.menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  position: relative;
+  list-style: none;
+}
+
+.menu ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  color: #383838;
+  padding: 0 0;
+  margin: 0 0;
+  font-weight: normal;
+  line-height: 24px;
+  font-family: 'PT Sans', Arial, sans-serif;
+  padding: 5px 0;
+  padding-left: 35px;
+}
+
+.menu ul li a:hover {
+  background-color: #fcfcfc;
+}
+
+.menu ul .count {
+  position: absolute;
+  border-radius: 15px;
+  top: 0;
+  right: 15px;
+}
+
+.menu ul .count.count-menu {
+  font-size: 11px;
+  color: #ffffff;
+  padding: 0 0;
+  margin: 0 0;
+  font-weight: normal;
+  line-height: auto;
+  background-color: #f29393;
+  padding: 0px 7px;
+  top: 10.5px;
+}
+
+.menu ul .count.count-submenu {
+  font-size: 13px;
+  color: #8e8e8e;
+  padding: 0 0;
+  margin: 0 0;
+  font-weight: normal;
+  line-height: auto;
+  padding: 0px 7px;
+  top: 8px;
+}
+
+.menu ul .menu-header {
+  font-size: 18px;
+  color: #374c78;
+  padding: 0 0;
+  margin: 0 0;
+  font-weight: normal;
+  line-height: 24px;
+  font-family: 'PT Sans', Arial, sans-serif;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  display: block;
+}
+
+.menu ul .menu-item {
+  border-top: 1px solid #ececec;
+}
+
+.menu ul .menu-item .sprite {
+  background-image: url(../img/spritesheet.png);
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+
+.menu ul .menu-item .sprite.sprite-blocks {
+  width: 11px;
+  height: 13px;
+  background-position: -5px -5px;
+}
+
+.menu ul .menu-item .sprite.sprite-lock {
+  width: 11px;
+  height: 14px;
+  background-position: -26px -5px;
+}
+
+.menu ul .menu-item .sprite.sprite-mail {
+  width: 15px;
+  height: 10px;
+  background-position: -47px -5px;
+}
+
+.menu ul .menu-item .sprite.sprite-star {
+  width: 14px;
+  height: 14px;
+  background-position: -72px -5px;
+}
+
+.menu ul .menu-item .sprite.sprite-trash {
+  width: 8px;
+  height: 10px;
+  background-position: -96px -5px;
+}
+
+.menu ul .menu-item.menu-show-all {
+  padding-left: 15px;
+  font-size: 14px;
+  color: #db5286;
+  text-decoration: underline;
+}
+
+.menu ul .menu-item.menu-show-all:hover {
+  text-decoration: none;
+}
+
+.menu ul .submenu-item {
+  padding-left: 45px;
+}

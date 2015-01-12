@@ -1,12 +1,22 @@
 $(document).ready(function() {
 
+
+// *****************************************************************************
+// Select's
+// *****************************************************************************
+
   $("#select2").select2();
   $("#select1").select2({
     placeholder: "Выпадающий список",
     minimumResultsForSearch: -1
   });
 
+
   $(".input-text-disable").prop("readonly", true);
+
+// *****************************************************************************
+// Owl Carousel
+// *****************************************************************************
 
   $("#owl-demo").owlCarousel({
 
@@ -28,6 +38,11 @@ $(document).ready(function() {
  
   });
 
+
+// *****************************************************************************
+// Correct/Wrong Input's
+// *****************************************************************************
+
   $("input.input-text").on("change", function(){
     if ($(this).val() === "wrong") {
       $(this)
@@ -47,10 +62,20 @@ $(document).ready(function() {
     };
   });
 
+
+// *****************************************************************************
+// Radio
+// *****************************************************************************
+
   $(".radio").on("change", function(){
     $(".radio:enabled").next().text("Активно");
     $(this).next().text("Отмечено");
   });
+
+
+// *****************************************************************************
+// Checkbox
+// *****************************************************************************
 
   $(".checkbox").on("change", function(){
     if($(this).prop("checked")){
@@ -60,6 +85,7 @@ $(document).ready(function() {
     }
   });
 
+
   $(".switch").on("change", function(){
     if($(this).prop("checked")){
       $(this).next().text("Включено");
@@ -68,8 +94,57 @@ $(document).ready(function() {
     }
   });
 
+
   $(".popup-1").on("click", function(){
     $(this).next().toggleClass("hidden");
+  });
+
+
+// *****************************************************************************
+// Range Slider
+// *****************************************************************************
+
+  $('.rangeslider').noUiSlider({
+    start: [ 1200, 9500 ],
+    step: 1,
+    connect: true,
+    range: {
+      'min': 0,
+      'max': 15000
+    },
+    format: wNumb({
+      decimals: 0,
+      postfix: 'Р'
+    })
+  });
+
+  $(".rangeslider").Link('lower').to('-inline-<div class="rangeslider-tooltip"></div>', function(value) {
+    $(this).html('<span>' + value + '</span>');
+  });
+
+  $(".rangeslider").Link('upper').to('-inline-<div class="rangeslider-tooltip"></div>', function(value) {
+    $(this).html('<span>' + value + '</span>');
+  });
+
+  $('.rangeslider-percent').noUiSlider({
+    start: 40,
+    connect: 'lower',
+    step: 1,
+    behaviour: "fixed",
+    range: {
+      'min': 0,
+      'max': 100
+    }
+  });
+
+
+// *****************************************************************************
+// Menu
+// *****************************************************************************
+
+  $('.menu-item').on('click', function(e){
+    e.preventDefault();
+    $(this).closest('li').children('.submenu').slideToggle();
   });
 
 });

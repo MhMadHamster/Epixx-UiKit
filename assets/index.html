@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<meta charset="UTF-8">
 	<title>Epixx UI Kit</title>
 </head>
@@ -420,7 +421,8 @@
 
 				<div class="col-4">
 					<div class="well">
-						
+						<div class="rangeslider">
+						</div>
 					</div>
 					<!-- /.well -->
 				</div>
@@ -433,15 +435,20 @@
 				
 				<div class="col-5">
 					<div class="well">
-						
+						<div class="rangeslider-percent">
+							
+						</div>
 					</div>
 					<!-- /.well -->
 				</div>
 				<!-- /.col-5 -->
 
 				<div class="col-4">
-					<div class="well">
-						
+					<div class="well center fork-wrapper">
+						<input type="radio" id="fork-1" name="radio-fork" checked>
+						<label for="fork-1" class="radio-fork">Опция 1</label>
+						<input type="radio" id="fork-2" name="radio-fork">
+						<label for="fork-2" class="radio-fork">Опция 2</label>
 					</div>
 					<!-- /.well -->
 				</div>
@@ -453,10 +460,70 @@
 		</div>
 
 
+		<!-- Extra -->
+		<div class="extra">
+
+			<div class="row">
+				<div class="col-12">
+					<div class="h1 h1-lined">Дополнительно</div>
+				</div>
+			</div>
+			<!-- /.row -->
+
+			<div class="row">
+
+				<div class="col-3">
+					<div class="well menu">
+						<ul>
+							<span class="menu-header">Входящие сообщения</span>
+							<li><a href="#" class="menu-item"><span class="sprite sprite-mail"></span>Новые</a><span class="count count-menu">32</span></li>
+							<li><a href="#" class="menu-item"><span class="sprite sprite-star"></span>Важные</a><span class="count count-menu">6</span></li>
+							<li><a href="#" class="menu-item"><span class="sprite sprite-blocks"></span>Работа</a><span class="count count-menu">4</span>
+								<ul class="submenu">
+									<li><a href="#" onclick="return false;" class="submenu-item">Забота</a><span class="count count-submenu">1</span></li>
+									<li><a href="#" onclick="return false;" class="submenu-item">Зевота</a><span class="count count-submenu">2</span></li>
+									<li><a href="#" onclick="return false;" class="submenu-item">Суббота</a><span class="count count-submenu">1</span></li>
+								</ul>
+							</li>
+							<li><a href="#" class="menu-item"><span class="sprite sprite-lock"></span>Спам</a><span class="count count-menu"></span></li>
+							<li><a href="#" class="menu-item"><span class="sprite sprite-trash"></span>Архив</a><span class="count count-menu">3</span></li>
+							<li><a href="#" class="menu-item menu-show-all">Показать все</a></li>
+						</ul>
+					</div>
+					<!-- /.menu -->
+				</div>
+
+				<!-- /.col-3 -->
+
+				<div class="col-3">
+					<div class="well tape tape-red"></div>
+					<!-- /.well -->
+				</div>
+
+				<!-- /.col-3 -->
+
+				<div class="col-3">
+					<div class="well tape tape-yellow"></div>
+					<!-- /.well -->
+				</div>
+				<!-- /.col-3 -->
+
+				<div class="col-3">
+					<div class="well tape tape-green"></div>
+					<!-- /.well -->
+				</div>
+				<!-- /.col-3 -->
+
+			</div>
+			<!-- /.row -->
+
+		</div>
+		<!-- /.extra -->
+
+
 	</div>
 	<!-- /.container -->
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="js/index.js"></script>
 
 </body>

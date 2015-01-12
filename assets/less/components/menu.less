@@ -1,0 +1,122 @@
+.menu {
+  padding: 15px 0;
+  min-height: 370px;
+
+  & ul {
+    padding: 0;
+    margin: 0;
+
+    & li {
+      position: relative;
+      list-style: none;
+
+      & a {
+        display: block;
+        text-decoration: none;
+        .typograph(@font-size: @menu-font-size;
+                   @color: @menu-text-color;
+                   @lh: @menu-line-height;);
+        font-family: 'PT Sans', Arial, sans-serif;
+        padding: 5px 0;
+        padding-left: 35px;
+
+        &:hover {
+          background-color: @menu-item-hover;
+        }
+      }
+    }
+
+    & .count {
+      position: absolute;
+      border-radius: 15px;
+      top: 0;
+      right: 15px;
+
+      &.count-menu {
+        .typograph(@font-size: @menu-count-fz;
+                   @color: @menu-count-color;);
+        background-color: @menu-count-bg-color;
+        padding: 0px 7px;
+        top: 10.5px;
+      }
+
+      &.count-submenu {
+        .typograph(@font-size: @submenu-count-fz;
+                   @color: @submenu-count-color;);
+        padding: 0px 7px;
+        top: 8px;
+      }
+    }
+
+    & .menu-header {
+      .typograph(@font-size: @menu-header-font-size;
+                 @color: @menu-header-text-color;
+                 @lh: @menu-line-height;);
+      font-family: 'PT Sans', Arial, sans-serif;
+      padding-left: 15px;
+      padding-bottom: 5px;
+      display: block;
+    }
+
+    & .menu-item {
+      border-top: 1px solid #ececec;
+
+      & .sprite {
+      background-image: url(../img/spritesheet.png);
+      background-repeat: no-repeat;
+      display: block;
+      position: absolute;
+      top: 12px;
+      left: 15px;
+
+        &.sprite-blocks {
+            width: 11px;
+            height: 13px;
+            background-position: -5px -5px;
+        }
+
+        &.sprite-lock {
+            width: 11px;
+            height: 14px;
+            background-position: -26px -5px;
+        }
+
+        &.sprite-mail {
+            width: 15px;
+            height: 10px;
+            background-position: -47px -5px;
+        }
+
+        &.sprite-star {
+            width: 14px;
+            height: 14px;
+            background-position: -72px -5px;
+        }
+
+        &.sprite-trash {
+            width: 8px;
+            height: 10px;
+            background-position: -96px -5px;
+        }
+
+      }
+
+      &.menu-show-all {
+        padding-left: 15px;
+        font-size: @menu-show-all-fz;
+        color: @menu-show-all-color;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+      }
+
+    }
+
+    & .submenu-item {
+      padding-left: 45px;
+    }
+  }
+}

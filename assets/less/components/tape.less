@@ -1,0 +1,30 @@
+.tape {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+
+  &.tape-red:after,
+  &.tape-green:after,
+  &.tape-yellow:after {
+    content: '';
+    display: block;
+    height: 12px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -40%;
+    transform: rotate(-45deg);
+  }
+
+  &.tape-red:after {
+    background-color: @tape-red;
+  }
+
+  &.tape-green:after {
+    background-color: @tape-green;
+  }
+
+  &.tape-yellow:after {
+    background-color: @tape-yellow;
+  }
+}

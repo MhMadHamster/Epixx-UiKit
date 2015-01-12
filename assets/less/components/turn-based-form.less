@@ -1,0 +1,76 @@
+.turn-based {
+  padding-top: 50px;
+  position: relative;
+
+  & .tb-radio {
+    display: none;
+  }
+  
+  & .tb-radio:checked + .tb-radio-text {
+    &:after {
+      background-color: @light-orange;
+    }
+    
+    & ~ .tb-radio-text:after {
+      background-color: @tb-unchecked-color; 
+    }
+    
+    & ~ .tb-line {
+      background-color: @tb-unchecked-color;
+      &:after,
+      &:before {
+        background-color: @tb-unchecked-color;
+      }
+    }
+  }
+  
+  & .tb-radio-text {
+    display: inline-block;
+    position: relative;
+    color: @input-text-color;
+    
+    &:hover {
+      cursor: pointer;
+    }
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: @light-orange;
+      border-radius: 50%;
+      top: -20px;
+      left: 35%;
+    }
+  }
+  
+  & .tb-line {
+    display: inline-block;
+    width: 35%;
+    height: 2px;
+    background-color: @light-orange;
+    vertical-align: top;
+    position: relative;
+    top: -15px;
+    
+    &:after,
+    &:before {
+      content: '';
+      background-color: @light-orange;
+      height: 2px;
+      width: 30%;
+      display: block;
+      position: absolute;
+    }
+    &:after {
+      top: 0;
+      left: -15px;
+    }
+    &:before {
+      top: 0;
+      right: -15px;
+    }
+  }
+}
