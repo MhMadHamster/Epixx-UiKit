@@ -1,0 +1,64 @@
+.stars-wrapper {
+  padding: 15px 0;
+
+  & .stars-text {
+    display: inline-block;
+    .typograph(@font-size: @stars-font-size; @color: @stars-text-color;);
+    padding-right: 10px;
+  }
+
+  & .stars {
+    background: url("../img/stars.png") repeat-x -5px -5px;
+    width: 125px;
+    height: 15px;
+    display: inline-block;
+
+    & input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      filter: alpha(opacity=0);
+
+      &.star-5:checked ~ span { width: 100%; }
+      &.star-4:checked ~ span { width: 80%; }
+      &.star-3:checked ~ span { width: 60%; }
+      &.star-2:checked ~ span { width: 40%; }
+      &.star-1:checked ~ span { width: 20%; }
+    }
+
+    & label {
+      display: block;
+      width: 25px;
+      height: 15px;
+      text-indent: -999em;
+      float: left;
+      position: relative;
+      z-index: 10;
+      background: transparent;
+      cursor: pointer;
+
+      &:hover ~ span {
+        background-position: -5px -30px;
+      }
+
+      &.star-5:hover ~ span.star { width: 100%; }
+      &.star-4:hover ~ span.star { width: 80%; }
+      &.star-3:hover ~ span.star { width: 60%; }
+      &.star-2:hover ~ span.star { width: 40%; }
+      &.star-1:hover ~ span.star { width: 20%; }
+
+    }
+
+    & span {
+      display: block;
+      width: 0;
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 15px;
+      background: url("../img/stars.png") repeat-x -5px -30px;
+      transition: width 0.5s;
+    }
+
+  }
+
+}

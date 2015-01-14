@@ -715,6 +715,11 @@ body {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
+a,
+a:active {
+  outline: none;
+}
+
 .col-1 {
   width: 8.33333333%;
   float: left;
@@ -2257,7 +2262,6 @@ h4,
 
 .menu {
   padding: 15px 0;
-  min-height: 370px;
 }
 
 .menu ul {
@@ -2387,4 +2391,158 @@ h4,
 
 .menu ul .submenu-item {
   padding-left: 45px;
+}
+
+.sect {
+  padding: 25px 0;
+}
+
+.sect .icon {
+  background-image: url(../img/spritesheet_extra.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.sect .icon.icon-home {
+  background-position: -5px -5px;
+  width: 17px;
+  height: 15px;
+}
+
+.sect a,
+.sect span {
+  font-size: 15px;
+  color: #353535;
+  padding: 0 0;
+  margin: 0 0;
+  font-weight: normal;
+  line-height: auto;
+}
+
+.stars-wrapper {
+  padding: 15px 0;
+}
+
+.stars-wrapper .stars-text {
+  display: inline-block;
+  font-size: 15px;
+  color: #353535;
+  padding: 0 0;
+  margin: 0 0;
+  font-weight: normal;
+  line-height: auto;
+  padding-right: 10px;
+}
+
+.stars-wrapper .stars {
+  background: url("../img/stars.png") repeat-x -5px -5px;
+  width: 125px;
+  height: 15px;
+  display: inline-block;
+}
+
+.stars-wrapper .stars input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.stars-wrapper .stars input[type="radio"].star-5:checked ~ span {
+  width: 100%;
+}
+
+.stars-wrapper .stars input[type="radio"].star-4:checked ~ span {
+  width: 80%;
+}
+
+.stars-wrapper .stars input[type="radio"].star-3:checked ~ span {
+  width: 60%;
+}
+
+.stars-wrapper .stars input[type="radio"].star-2:checked ~ span {
+  width: 40%;
+}
+
+.stars-wrapper .stars input[type="radio"].star-1:checked ~ span {
+  width: 20%;
+}
+
+.stars-wrapper .stars label {
+  display: block;
+  width: 25px;
+  height: 15px;
+  text-indent: -999em;
+  float: left;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  cursor: pointer;
+}
+
+.stars-wrapper .stars label:hover ~ span {
+  background-position: -5px -30px;
+}
+
+.stars-wrapper .stars label.star-5:hover ~ span.star {
+  width: 100%;
+}
+
+.stars-wrapper .stars label.star-4:hover ~ span.star {
+  width: 80%;
+}
+
+.stars-wrapper .stars label.star-3:hover ~ span.star {
+  width: 60%;
+}
+
+.stars-wrapper .stars label.star-2:hover ~ span.star {
+  width: 40%;
+}
+
+.stars-wrapper .stars label.star-1:hover ~ span.star {
+  width: 20%;
+}
+
+.stars-wrapper .stars span {
+  display: block;
+  width: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 15px;
+  background: url("../img/stars.png") repeat-x -5px -30px;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.progress-text {
+  position: relative;
+  top: -5px;
+  left: 40%;
+  font-size: 15px;
+  color: #bfbfbf;
+  padding: 0 0;
+  margin: 0 0;
+  font-weight: normal;
+  line-height: auto;
+}
+
+.progress {
+  position: relative;
+  overflow: hidden;
+  height: 10px;
+  background-color: #e6e9ed;
+  border-radius: 10px;
+}
+
+.progress:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 60%;
+  height: 100%;
+  width: 100%;
+  background-color: #fc6e51;
+  border-radius: 10px;
 }

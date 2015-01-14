@@ -1,0 +1,26 @@
+.progress-text {
+  position: relative;
+  top: -5px;
+  left: @progress-percent;
+  .typograph(@font-size: @progress-font-size; @color: @progress-text-color;);
+}
+
+.progress {
+  position: relative;
+  overflow: hidden;
+  height: @progress-height;
+  background-color: @progress-bg-color;
+  border-radius: 10px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    right: (100% - @progress-percent);
+    height: 100%;
+    width: 100%;
+    background-color: @progress-color;
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,18 @@
+.sect {
+  padding: 25px 0;
+
+  & .icon {
+    background-image: url(../img/spritesheet_extra.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+
+    &.icon-home {
+      .icon-mix(-5px, -5px, 17px, 15px);
+    }
+  }
+
+  & a,
+  & span {
+    .typograph(@font-size: @sect-menu-font-size; @color: @sect-menu-color;);
+  }
+}
